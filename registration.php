@@ -12,7 +12,7 @@ $name = $phone = $email = $subjet = $message = $ip = $timeinsert = '';
         // check Duplicate Entry
         $result = mysqli_query($connection, "SELECT * FROM user_table WHERE email = '$checkemail'");
         $exce = mysqli_num_rows($result);
-        if(!$exce){
+        if($exce > 0){
             $dataErr_Message = "Duplicate Data";
             echo $dataErr_Message;
         }
@@ -108,7 +108,6 @@ $name = $phone = $email = $subjet = $message = $ip = $timeinsert = '';
             } else {
                 $err1 = "Failed to Insert the Data";
             }
-
         }
     }
 ?>
